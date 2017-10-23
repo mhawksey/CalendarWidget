@@ -271,6 +271,6 @@ chrome.extension.getBackgroundPage = function(){
 }
 // Are we running in the context of the Options page? Or is this file being included so that
 // the client can set and get options?
-if (typeof $ !== 'undefined') {
+if (typeof jQuery !== 'undefined') {
   background.initialize();
 }

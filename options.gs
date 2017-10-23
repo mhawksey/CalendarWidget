@@ -71,7 +71,7 @@ options.OPTIONS_WIDGET_SELECTOR_ = '.option';
  * @return {?*} The retrieved value, as anything; null if not found.
  */
 options.get = function(optionKey) {
-  if (typeof $ !== 'undefined') {
+  if (typeof jQuery !== 'undefined') {
     google.script.run.withSuccessHandler(function(data){
       var optionValue = window.localStorage[options.OPTION_KEY_PREFIX_ + optionKey];
     }).optionsGet(options.OPTION_KEY_PREFIX_ + optionKey)   
@@ -81,7 +81,7 @@ options.get = function(optionKey) {
       return JSON.parse(optionValue);
     }
   }
-  if (typeof $ !== 'undefined') {
+  if (typeof jQuery !== 'undefined') {
     var optionValue = window.localStorage[options.OPTION_KEY_PREFIX_ + optionKey];
     if (optionValue) {
       return window.JSON.parse(optionValue);
@@ -96,7 +96,7 @@ options.get = function(optionKey) {
  * @param {*} optionValue The value of the option.
  */
 options.set = function(optionKey, optionValue) {
-  if (typeof $ !== 'undefined') {
+  if (typeof jQuery !== 'undefined') {
     console.log(optionValue);
     google.script.run.optionsSet(options.OPTION_KEY_PREFIX_ + optionKey, optionValue);
     window.localStorage[options.OPTION_KEY_PREFIX_ + optionKey] =
@@ -242,7 +242,7 @@ options.fillMessages_ = function() {
 
 // Are we running in the context of the Options page? Or is this file being included so that
 // the client can set and get options?
-if (typeof $ !== 'undefined') {
+if (typeof jQuery !== 'undefined') {
   //feeds.fetchCalendars();
   options.set('debug-enable-logs',true);
   options.fillMessages_();
