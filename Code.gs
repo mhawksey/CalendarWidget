@@ -1,8 +1,11 @@
 /*
-/* To setup click Resources > Advanced Google Services and switch Calendar API 'on'. 
-/* In the same dialog window click 'Google API console' and in the cosole click 
-/* 'Enable APIs and Services' and search and enable the Calendar API.
+/* To setup File > Make a copy then in your copy click Resources > Advanced Google 
+/* Services and switch Calendar API 'on'. In the same dialog window click 'Google 
+/* API console' and in the console click 'Enable APIs and Services' and search
+/* and enable the Calendar API.
+/*
 /* From this Script Editor finally click Publish > Deploy > Deploy as web app..
+/* choosing your publication preferences 
 */
 
 function doGet(e) { 
