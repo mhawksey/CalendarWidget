@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <?!= Include.gs(['lib/moment+langs.min','utils','i18n','shim','feeds','options']); ?>
+    <?!= Include.js(['constants','browser_action']); ?>
+    <?!= Include.css(['browser_action']); ?>
+  </head>
+  <body>
+    <header>
+      <div id="action-bar">
+        <?!= Include.img(icons['ic_refresh_white_24dp.png']); ?>
+        <?!= Include.img(icons['ic_settings_white_24dp.png']); ?>
+      </div>
+      <div class="popup-title">
+        <a data-href="calendar_ui_url" target="_blank">
+          <span class="i18n" id="logo_text">Google Calendar</span>
+        </a>
+      </div>
+      <!-- <div class="fab"> -->
+        <?!= //Include.img(icons['ic_add_white_24dp.png']); ?>
+      <!-- </div> -->
+    </header>
+    <div class="header-placeholder"></div>
+    <section>
+      <a id="announcement_new_features" class="i18n" href="https://github.com/manastungare/google-calendar-crx/wiki/Changes" target="_blank"></a>
+      <div id="info_bar"></div>
+      <div id="error">
+        <p class="i18n" id="authorization_explanation"></p>
+        <p><button class="button i18n" id="authorization_required"></button></p>
+        <p>
+          <a class="i18n" id="problems" target="_blank"
+              href="https://github.com/manastungare/google-calendar-crx/wiki/Troubleshooting">Problems?</a>
+        </p>
+      </div>
+      <div id="quick-add">
+        <h2 class="i18n" id="add_an_event">Add an Event</h2>
+        <select id="quick-add-calendar-list"/>
+        <textarea id="quick-add-event-title" rows="5" tabindex="1"></textarea>
+        <div class="quick-add-buttons">
+          <button id="quick_add_button" class="button i18n" tabindex="2">Quick Add</button>
+        </div>
+      </div>
+      <div id="detected-events"></div>
+      <div id="calendar-events"></div>
+    </section>
+    <? if (Session.getActiveUser().getEmail() === Session.getEffectiveUser().getEmail()) { ?>
+    <style>#show_options { display:inline; }</style>
+    <? } ?>
+  </body>
+</html>
