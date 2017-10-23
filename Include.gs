@@ -54,6 +54,11 @@ var Include = (function (ns) {
     return '<style>\n' + ns.html(scripts,'.css') + '</style>\n';
   };
   
+  /**
+  * given an image object, it will generate an img tag 
+  * @param {Object} imgData with image data
+  * @return {string} of img tag or src
+  */
   ns.img = function (imgData, isImgTag) {
     if (!isImgTag){
       var html = '<img ';
