@@ -118,5 +118,13 @@ var i18n = {
 "alert_new_event_added": {
 "message": "This event has just been added to your calendar: ",
 "description": "When a new event is added into the user's calendar, an alert message will be displayed for the user to click on it and see the details"
+},
+"option_show_time_in_24hr": {
+"message": "Show calendar times in 24-hour format",
+"description": "Option to show calendar times in 24-hour format"
+},
+"enable_debug_logging": {
+"message": "Enable console.log dubugging",
+"description": "Option to enable console.log dubugging"
 }
 }

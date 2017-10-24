@@ -67,8 +67,7 @@ var Include = (function (ns) {
       return html
     } else {
       return imgData.src;
-    }
-    
+    } 
   };
   
 

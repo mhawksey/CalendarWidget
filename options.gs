@@ -33,6 +33,7 @@ var options = {};
 options.Options = {
   BADGE_TEXT_SHOWN: 'badge-text-shown',
   DEBUG_ENABLE_LOGS: 'debug-enable-logs',
+  FORMAT_24HOUR_TIME: 'format24HourTime',
   TIME_UNTIL_NEXT_INCLUDES_ALL_DAY_EVENTS: 'time_until_next_includes_all_day_events'
 };
 
@@ -244,7 +245,6 @@ options.fillMessages_ = function() {
 // the client can set and get options?
 if (typeof jQuery !== 'undefined') {
   //feeds.fetchCalendars();
-  options.set('debug-enable-logs',true);
   options.fillMessages_();
   options.installAutoSaveHandlers();
   options.writeDefaultsToStorage();
