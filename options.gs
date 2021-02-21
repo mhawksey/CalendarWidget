@@ -74,7 +74,7 @@ options.OPTIONS_WIDGET_SELECTOR_ = '.option';
 options.get = function(optionKey) {
   if (typeof jQuery !== 'undefined') {
     google.script.run.withSuccessHandler(function(data){
-      var optionValue = window.localStorage[options.OPTION_KEY_PREFIX_ + optionKey];
+      window.localStorage[data.optionKey] = window.JSON.stringify(data.optionValue);
     }).optionsGet(options.OPTION_KEY_PREFIX_ + optionKey)   
   } else {
     var optionValue = PropertiesService.getScriptProperties().getProperty(options.OPTION_KEY_PREFIX_ + optionKey);
@@ -98,7 +98,7 @@ options.get = function(optionKey) {
  */
 options.set = function(optionKey, optionValue) {
   if (typeof jQuery !== 'undefined') {
-    console.log(optionValue);
+    console.log(optionKey+": "+optionValue);
     google.script.run.optionsSet(options.OPTION_KEY_PREFIX_ + optionKey, optionValue);
     window.localStorage[options.OPTION_KEY_PREFIX_ + optionKey] =
       window.JSON.stringify(optionValue);

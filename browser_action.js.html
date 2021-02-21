@@ -42,6 +42,7 @@ browseraction.TOAST_FADE_OUT_DURATION_MS = 5000;
  */
 browseraction.initialize = function() {
   chrome.extension.getBackgroundPage().background.log('browseraction.initialize()');
+  chrome.extension.getBackgroundPage().background.log('format24HourTime: ' + options.get('format24HourTime'));
   //utils.startAnalytics_();
   //_gaq.push(['_trackEvent', 'Popup', 'Shown']);
   browseraction.fillMessages_();

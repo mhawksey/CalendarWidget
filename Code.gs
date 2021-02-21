@@ -25,7 +25,8 @@ function optionsSet(optionKey, optionValue){
 }
 
 function optionsGet(optionKey){
-  return options.get(optionKey);
+  var optionValue = options.get(optionKey);
+  return {optionKey: optionKey, optionValue: optionValue}; 
 }
 
 function fetchCalendars(optCache){
